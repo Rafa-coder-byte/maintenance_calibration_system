@@ -1,3 +1,12 @@
+ using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using maintenance_calibration_system.Domain.Types;
+using maintenance_calibration_system.Domain.Datos_de_Configuracion;
+namespace maintenance_calibration_system.Domain.Datos_Historicos
+{
  public class Maintenance
     {
         public string codeControl {get;set;} 
@@ -29,3 +38,4 @@
         }
 
     } 
+}
