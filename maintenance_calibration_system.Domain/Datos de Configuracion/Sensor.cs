@@ -8,7 +8,7 @@ using maintenance_calibration_system.Domain.Types;
 
 namespace maintenance_calibration_system.Domain.Datos_de_Configuración
 {
-public class Sensor
+public class Sensor : Entity 
 
     {
          public PhysicalMagnitude? physicalMagnitude;
