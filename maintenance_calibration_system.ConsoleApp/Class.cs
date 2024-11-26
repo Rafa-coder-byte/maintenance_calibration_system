@@ -20,12 +20,12 @@ namespace maintenance_calibration_system.ConsoleApp;
         Preventivo,
         Correctivo,
     }
-    public class PhysicalQuantity
+    public class PhysicalMagnitude
     {
         public string name{get;set;}
         public string Magnitude{get;set;}
 
-        public PhysicalQuantity(string name, string magnitude)
+        public PhysicalMagnitude(string name, string magnitude)
         {
             this.name = name;
             this.Magnitude = magnitude;
@@ -33,7 +33,7 @@ namespace maintenance_calibration_system.ConsoleApp;
     }
     public abstract class Equipment
     {
-        public PhysicalQuantity? physicalQuantity;
+        public PhysicalMagnitude? physicalMagnitude;
         public string? alphaNumericCode;
         public string? manufacturerName;
     }
@@ -44,9 +44,9 @@ namespace maintenance_calibration_system.ConsoleApp;
         public bool calibrated{get;set;}
         public CommunicationProtocol protocol{get;set;}
        
-        public Sensor(PhysicalQuantity physicalQuantity, string alphaNumericCode,string manufacturerName,CommunicationProtocol protocol,string principleOperation)
+        public Sensor(PhysicalMagnitude physicalMagnitude, string alphaNumericCode,string manufacturerName,CommunicationProtocol protocol,string principleOperation)
         {
-            this.physicalQuantity = physicalQuantity;
+            this.physicalMagnitude = physicalMagnitude;
             this.alphaNumericCode = alphaNumericCode;
             this.manufacturerName = manufacturerName;
             this.protocol = protocol;
@@ -63,9 +63,9 @@ namespace maintenance_calibration_system.ConsoleApp;
         public bool maintenance {get; set;}
      
 
-        public Actuador (PhysicalQuantity physicalQuantity, string alphaNumericCode,string manufacturerName,CommunicationProtocol protocol,string codeControl, SignalControl signalControl)
+        public Actuador (PhysicalMagnitude physicalMagnitude, string alphaNumericCode,string manufacturerName,CommunicationProtocol protocol,string codeControl, SignalControl signalControl)
         {
-            this.physicalQuantity = physicalQuantity;
+            this.physicalMagnitude = physicalMagnitude;
             this.alphaNumericCode = alphaNumericCode;
             this.manufacturerName = manufacturerName;
             this.protocol = protocol;
@@ -82,9 +82,9 @@ namespace maintenance_calibration_system.ConsoleApp;
         public string nameCertificateAuthority {get; set;}
         public List<Sensor> calibratedSensors{get;set;}
 
-         public Calibraciones(PhysicalQuantity physicalQuantity, string alphaNumericCode,string manufacturerName,CommunicationProtocol protocol,string principelOperation, string dateCalibration, string nameTechnician, string nameCertificateAuthority)
+         public Calibraciones(PhysicalMagnitude physicalMagnitude, string alphaNumericCode,string manufacturerName,CommunicationProtocol protocol,string principelOperation, string dateCalibration, string nameTechnician, string nameCertificateAuthority)
         {
-            this.physicalQuantity = physicalQuantity;
+            this.physicalMagnitude = physicalMagnitude;
             this.alphaNumericCode = alphaNumericCode;
             this.manufacturerName = manufacturerName;
             this.protocol = protocol;
@@ -114,9 +114,9 @@ namespace maintenance_calibration_system.ConsoleApp;
         public string nameTechnician{get; set;}
         public List<Actuador> maintenanceActuador {get;set;}  
        
-        public Maintenance (PhysicalQuantity physicalQuantity, string alphaNumericCode,string manufacturerName,CommunicationProtocol protocol,string codeControl, SignalControl signalControl, TypeMaintenance typeMaintenance, string dateMaintenance, string nameTechnician)
+        public Maintenance (PhysicalMagnitude physicalMagnitude, string alphaNumericCode,string manufacturerName,CommunicationProtocol protocol,string codeControl, SignalControl signalControl, TypeMaintenance typeMaintenance, string dateMaintenance, string nameTechnician)
         {
-            this.physicalQuantity = physicalQuantity;
+            this.physicalMagnitude = physicalMagnitude;
             this.alphaNumericCode = alphaNumericCode;
             this.manufacturerName = manufacturerName;
             this.protocol = protocol;
